@@ -110,7 +110,7 @@ public class OperationsController {
         model.addAttribute("ratCalcForm", ratCalcForm);
         return "operations/multiply";
     }
-    
+
       @GetMapping("/multiply/results")
     public String getMultiplyResult(Model model, @Valid RatCalcForm ratCalcForm, BindingResult bindingResult) {
         logger.info("getMultiplyResult ratCalcForm=" + ratCalcForm);
@@ -128,5 +128,4 @@ public class OperationsController {
         model.addAttribute("ratCalcForm", ratCalcForm);
         return "operations/multiply";
     }
-
 }
