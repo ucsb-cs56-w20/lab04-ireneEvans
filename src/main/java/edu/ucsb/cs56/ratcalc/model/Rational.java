@@ -1,6 +1,5 @@
 package edu.ucsb.cs56.ratcalc.model;
-
-/**
+/*
  * A class to represent a rational number with a numerator and denominator
  *
  * @author P. Conrad for CS56 F16
