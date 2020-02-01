@@ -114,7 +114,7 @@ public class OperationsController {
       @GetMapping("/multiply/results")
     public String getMultiplyResult(Model model, @Valid RatCalcForm ratCalcForm, BindingResult bindingResult) {
         logger.info("getMultiplyResult ratCalcForm=" + ratCalcForm);
-        ratCalcForm.setOp("*");
+        ratCalcForm.setOp("x");
 
          if (!bindingResult.hasErrors() && !checkDenominatorErrors(ratCalcForm)) {
             Rational r1 = new Rational(ratCalcForm.getNum1(), ratCalcForm.getDenom1());
@@ -127,5 +127,12 @@ public class OperationsController {
         
         model.addAttribute("ratCalcForm", ratCalcForm);
         return "operations/multiply";
+    }
+      @GetMapping("/divide")
+    public String getDivide(Model model) {
+        RatCalcForm ratCalcForm = new RatCalcForm();
+        ratCalcForm.setOp("/");
+        model.addAttribute("ratCalcForm", ratCalcForm);
+        return "operations/divide";
     }
 }
